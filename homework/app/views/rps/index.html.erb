@@ -1,0 +1,10 @@
+<h1> Rock, Paper, Scissors </h1>
+<h2> Choose one. </h2>
+
+
+<% @choices.each do |choice| %>
+	<%choice.each do |key, value| %>
+		  <p> <%= link_to value, mychoice_url(value.downcase), action: :selection%> </p>
+	<% end %> 
+<% end %> 
+

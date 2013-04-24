@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
     @movie = @movies[params[:id].to_i]
 
     # render 'hello'
-    # render text: 'Hello'
+    render text: 'Hello'
     # render
   end
 

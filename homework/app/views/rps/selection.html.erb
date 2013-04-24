@@ -1,0 +1,50 @@
+<h1> Rock, Paper, Scissors </h1>
+ 
+<% if params[:choice] == @comp %>
+	<h2> Computer chose <%=@comp%> too. Tie!! </h2>
+
+<%elsif params[:choice] == "rock" %>
+		<%if @comp == "paper" %>
+			<h2> Computer chose <%=@comp%>. You lose! </h2>
+		<%else%>
+			<h2> Computer chose <%=@comp%>. You win! </h2>
+		<%end%>
+<%elsif params[:choice] == "paper" %>
+		<%if @comp == "rock" %>
+			<h2> Computer chose <%=@comp%>. You win! </h2>
+		<%else%>
+			<h2> Computer chose <%=@comp%>. You lose! </h2>		
+		<%end%>
+<%elsif params[:choice] == "scissors" %>
+		<%if @comp == "paper" %>
+			<h2> Computer chose <%=@comp%>. You win! </h2>
+		<%else%>
+			<h2> Computer chose <%=@comp%>. You lose! </h2>		
+		<%end%>
+<%end%>
+
+<p><%=link_to "Play Again?", index_url%> </p>
+
+
+<!-- 
+if same then tie else
+
+if param is rock
+	if @comp == Paper
+		comp wins, you lose
+	else (scissors) you win
+
+if param is paper
+	if @comp == rock
+		you win
+	else (scissors)
+		comp wins, you lose
+
+
+if param is scissors
+	if @comp == paper
+		you win, comp lose
+
+	else (rock)
+		you lose, comp wins
+-->

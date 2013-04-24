@@ -1,0 +1,32 @@
+<h1> Dice Game </h1>
+
+<p> You rolled: 
+	<%@temp= [1 + rand(6), 1 + rand(6)]%> 
+	<%=@temp%>
+</p>
+ 
+<p> Your point is <%= params["point"]%>  </p>
+
+<%if @temp.sum == params["point"]%>
+	<p> Game Over! You Win!</p>	
+	<form method ="get" action= "/dice">
+		<input type="submit" value="Play Again?">
+		</form>
+<%elsif @temp.sum == 7%>
+	<p> Game Over! You Lose!</p>
+	<form method ="get" action= "/dice">
+		<input type="submit" value="Play Again?">
+		</form>	
+<%else%>
+		<form method ="post" action = <%=roll_url params["point"]%>>
+		<input type="submit" value="Roll Again">
+	</form>
+<%end%>
+
+
+<!--#If your first roll is a 7 or 11, you win.
+#If your first roll is a 2, 3 or 12, you lose.
+#Anything else becomes your point. Roll your point again before a 7 and you win.
+<p> <@rolls[1]  %> </p>
+p><link_to "Play Again?", dice_index_url%> </p>
+-->
